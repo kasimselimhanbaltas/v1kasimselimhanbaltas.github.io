@@ -1,29 +1,41 @@
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
 }
-.hero{
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
     height: 100vh;
 }
-nav{
+
+nav {
     display: flex;
     justify-content: space-around;
     padding: 10px;
     background-image: url(../images/bg.jpg);
 }
-nav img{
+
+.disabled {
+    cursor: not-allowed;
+}
+nav img {
     max-height: 35px;
     margin-right: 200px;
     text-align: center;
     padding: 10px;
 }
-nav .links{
+
+nav .links {
     display: flex;
     width: 30vmax;
     justify-content: space-around;
 }
-nav a{
+
+nav a {
     padding: 20px;
     text-decoration: none;
     color: darkcyan;
@@ -32,7 +44,8 @@ nav a{
     letter-spacing: 1px;
 
 }
-.introduce{
+
+.introduce {
     background: url(../images/bg.jpg);
     /* background-color: rgb(199, 199, 199); */
     width: auto;
@@ -43,52 +56,62 @@ nav a{
     display: flex;
     justify-content: space-around;
     align-items: center;
-} 
+}
 
-.introduce img{
+.introduce img {
     max-width: 600px;
     min-height: 450px;
     transition: transform .5s;
 }
-.introduce h1{
+
+.introduce h1 {
     text-align: center;
     font-size: 35px;
     padding: 50px;
     letter-spacing: 2px;
 }
-.introduce h1 span{
+
+.introduce h1 span {
     color: darkred;
 }
-.introduce h2{
+
+.introduce h2 {
     text-align: center;
     font-size: 28px;
 }
-.introduce img:hover{
-    transform: scale(1.2) translateX(5%) ;
+
+.introduce img:hover {
+    transform: scale(1.2) translateX(5%);
 }
-.about{
+
+.about {
     height: 50vh;
     background-color: inherit;
     text-align: center;
 }
-.about p{
+
+.about p {
     margin-top: 5%;
     line-height: 25px;
 }
-h2{
+
+h2 {
     letter-spacing: 1px;
     font-size: 30px;
 }
-.skillscontainer{
+
+.skillscontainer {
     margin: auto;
     min-width: 60%;
     padding: 0px auto;
 }
-.skills{
+
+.skills {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
-.skill{
+
+.skill {
     border: 10px groove silver;
     border-radius: 10%;
     width: 85px;
@@ -98,40 +121,47 @@ h2{
     margin: 10px 0;
     transition: transform .3s;
 }
-.skill:hover{
+
+.skill:hover {
     transform: rotate(360deg);
 }
-.skill img{
+
+.skill img {
     max-height: 50px;
     padding: 10px;
     padding-bottom: 30px;
 }
-.skill h3{
+
+.skill h3 {
     position: absolute;
     width: 100%;
     bottom: 0;
     transform: translateX(-10%);
 }
-.aboutcontainer{
+
+.aboutcontainer {
     background: url(../images/bg.jpg);
     margin-top: 2%;
     padding: 40px;
     display: flex;
 }
-.contact{
+
+.contact {
     padding: auto;
 }
-.platforms{
+
+.platforms {
     margin-top: 2%;
     padding: 30px;
     background: url(../images/bg.jpg);
     display: flex;
     justify-content: center;
 }
-.platform{
+
+.platform {
     padding: 0px 100px;
 }
-.platform img{
+
+.platform img {
     width: 35px;
 }
-

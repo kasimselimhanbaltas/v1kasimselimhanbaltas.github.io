@@ -7,15 +7,15 @@
 </head>
 
 <body>
-    <section class="hero">
+    <section class="hero" id="home">
         <nav>
             <img src="images/sb.png" alt="">
             <div class="links">
-                <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Skills</a>
-                <a href="">Projects</a>
-                <a href="">Contact</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects" class="disabled">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
         <div class="introduce">
@@ -27,7 +27,7 @@
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <h2>About Me</h2>
         <div class="aboutcontainer">
             <div style="max-width: 30%">
@@ -35,7 +35,7 @@
                 <p>I am improving myself in Web Development. I started my web development journey with Spring Boot and VueJS during my first internship.
                     Currently, I am trying to get better in HTML, JS and CSS.</p>
             </div>
-            <div class="skillscontainer">
+            <div class="skillscontainer" id="skills">
                 <h2 style="width: 100%;">My Skills</h2>
 
                 <div class="skills">
@@ -74,7 +74,7 @@
         </div>
     </section>
     
-    <section class="contact">
+    <section class="contact" id="contact">
         <h2 style="margin-top: 50px; text-align: center;">Contact Me</h2>
         <div class="platforms">
             <div class="platform" title="LinkedIn">
