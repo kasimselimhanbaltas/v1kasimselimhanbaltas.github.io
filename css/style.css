@@ -3,39 +3,71 @@
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
 }
+.hero{
+    height: 100vh;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    background-image: url(../images/bg.jpg);
+}
+nav img{
+    max-height: 35px;
+    margin-right: 200px;
+    text-align: center;
+    padding: 10px;
+}
+nav .links{
+    display: flex;
+    width: 30vmax;
+    justify-content: space-around;
+}
+nav a{
+    padding: 20px;
+    text-decoration: none;
+    color: darkcyan;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+}
 .introduce{
     background: url(../images/bg.jpg);
     /* background-color: rgb(199, 199, 199); */
     width: auto;
-    margin: 50px 0;
-    height: 350px;
-} 
-.container h1{
-    text-align: center;
-    font-size: 50px;
-    padding: 50px;
-    letter-spacing: 2px;
-}
-.container h1 span{
-    color: darkred;
-}
-.introduce{
-    display: flex;
     position: relative;
+    top: 50%;
+    transform: translateY(-70%);
+    height: 350px;
+    display: flex;
     justify-content: space-around;
     align-items: center;
-}
+} 
+
 .introduce img{
     max-width: 600px;
     min-height: 450px;
     transition: transform .5s;
 }
+.introduce h1{
+    text-align: center;
+    font-size: 35px;
+    padding: 50px;
+    letter-spacing: 2px;
+}
+.introduce h1 span{
+    color: darkred;
+}
+.introduce h2{
+    text-align: center;
+    font-size: 28px;
+}
 .introduce img:hover{
     transform: scale(1.2) translateX(5%) ;
 }
-
 .about{
-    margin-top: 7%;
+    height: 50vh;
     background-color: inherit;
     text-align: center;
 }
