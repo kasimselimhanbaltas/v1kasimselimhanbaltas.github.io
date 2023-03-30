@@ -4,6 +4,7 @@
     <title>Selimhan Baltaş</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="google-site-verification" content="Lzg8xUSxO_Tvqnr26CCyv9FV29tXwhBxyukXVU_Nmv8" />
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -39,36 +40,17 @@
                 <h2 style="width: 100%;">My Skills</h2>
 
                 <div class="skills">
-                    <div class="skill">
-                        <img src="images/Vue.png"
-                            alt="">
-                        <h3>VueJS</h3>
-                    </div>
-                    <div class="skill">
-                        <img src="images/springboot.png"
-                            alt="">
-                        <h3>Spring Boot</h3>
-                    </div>
-                    <div class="skill">
-                        <img src="images/css.png"
-                            alt="">
-                        <h3>CSS</h3>
-                    </div>
-                    <div class="skill">
-                        <img src="images/js.png"
-                            alt="">
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="skill">
-                        <img src="images/java.png"
-                            alt="">
-                        <h3>Java</h3>
-                    </div>                    
-                    <div class="skill">
-                        <img src="images/python.png"
-                            alt="">
-                        <h3>Python</h3>
-                    </div>
+                    <script>
+                        for (let i = 0; i < skills.length; i++) {
+                          const skill = skills[i];
+                          document.write(`
+                            <div class="skill">
+                              <img src="${skill.image}" alt="">
+                              <h3>${skill.name}</h3>
+                            </div>
+                          `);
+                        }
+                    </script>
                 </div>
             </div>
         </div>
