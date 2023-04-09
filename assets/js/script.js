@@ -14,11 +14,11 @@ const projects = [
 
     description: "Back end: Spring Boot Database: PostgreSQL Front end: VueJSdsasf Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat natus aliquam asperiores obcaecati maxime reprehenderit itaque distinctio alias explicabo exercitationem. Enim cumque quae delectus! Eveniet rerum beatae quod adipisci reprehenderit, obcaecati officiis voluptatum vel quae eum est nihil necessitatibus quidem, quisquam harum consectetur distinctio. Ab voluptate ex non vitae omnis fuga facilis a cupiditate, dicta, excepturi assumenda, dolor quisquam odit numquam eveniet deleniti. Ducimus, ex facere. Quae voluptates quod cupiditate quas quisquam sequi asperiores ullam non necessitatibus sapiente, laborum fuga hic distinctio blanditiis doloremque, accusantium provident eveniet nam temporibus error ducimus facere tenetur nostrum. Dolorum excepturi aut sequi sunt voluptatum. ",
     images: [
-      "assets/images/projects/c11.png",
-      "assets/images/projects/c12.png",
-      "assets/images/projects/c13.png",
-      "assets/images/projects/c14.png",
-      "assets/images/projects/c15.png",
+      "assets/images/projects/c11.PNG",
+      "assets/images/projects/c12.PNG",
+      "assets/images/projects/c13.PNG",
+      "assets/images/projects/c14.PNG",
+      "assets/images/projects/c15.PNG",
     ],
     githubLink: "",
   },
@@ -27,12 +27,12 @@ const projects = [
     projectName: "Car Gallery Management System",
     description: "Back end: Spring Boot Database: PostgreSQL Front end: VueJSdsasf Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat natus aliquam asperiores obcaecati maxime reprehenderit itaque distinctio alias explicabo exercitationem. Enim cumque quae delectus! Eveniet rerum beatae quod adipisci reprehenderit, obcaecati officiis voluptatum vel quae eum est nihil necessitatibus quidem, quisquam harum consectetur distinctio. Ab voluptate ex non vitae omnis fuga facilis a cupiditate, dicta, excepturi assumenda, dolor quisquam odit numquam eveniet deleniti. Ducimus, ex facere. Quae voluptates quod cupiditate quas quisquam sequi asperiores ullam non necessitatibus sapiente, laborum fuga hic distinctio blanditiis doloremque, accusantium provident eveniet nam temporibus error ducimus facere tenetur nostrum. Dolorum excepturi aut sequi sunt voluptatum. ",
     images: [
-      "assets/images/projects/cc1.png",
-      "assets/images/projects/cc2.png",
-      "assets/images/projects/cc3.png",
-      "assets/images/projects/cc4.png",
-      "assets/images/projects/cc5.png",
-      "assets/images/projects/cc6.png",
+      "assets/images/projects/cc1.PNG",
+      "assets/images/projects/cc2.PNG",
+      "assets/images/projects/cc3.PNG",
+      "assets/images/projects/cc4.PNG",
+      "assets/images/projects/cc5.PNG",
+      "assets/images/projects/cc6.PNG",
     ],
     githubLink: "",
   },
@@ -41,8 +41,8 @@ const projects = [
     projectName: "Earth Info",
     description: "Back end: Spring Boot Database: PostgreSQL Front end: VueJSdsasf Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat natus aliquam asperiores obcaecati maxime reprehenderit itaque distinctio alias explicabo exercitationem. Enim cumque quae delectus! Eveniet rerum beatae quod adipisci reprehenderit, obcaecati officiis voluptatum vel quae eum est nihil necessitatibus quidem, quisquam harum consectetur distinctio. Ab voluptate ex non vitae omnis fuga facilis a cupiditate, dicta, excepturi assumenda, dolor quisquam odit numquam eveniet deleniti. Ducimus, ex facere. Quae voluptates quod cupiditate quas quisquam sequi asperiores ullam non necessitatibus sapiente, laborum fuga hic distinctio blanditiis doloremque, accusantium provident eveniet nam temporibus error ducimus facere tenetur nostrum. Dolorum excepturi aut sequi sunt voluptatum. ",
     images: [
-      "assets/images/projects/ei1.png",
-      "assets/images/projects/ei2.png",
+      "assets/images/projects/ei1.PNG",
+      "assets/images/projects/ei2.PNG",
     ],
     githubLink: "",
   },
@@ -51,17 +51,14 @@ const projects = [
     projectName: "Visual Exploration Assistant",
     description: "Back end: Spring Boot Database: PostgreSQL Front end: VueJSdsasf Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat natus aliquam asperiores obcaecati maxime reprehenderit itaque distinctio alias explicabo exercitationem. Enim cumque quae delectus! Eveniet rerum beatae quod adipisci reprehenderit, obcaecati officiis voluptatum vel quae eum est nihil necessitatibus quidem, quisquam harum consectetur distinctio. Ab voluptate ex non vitae omnis fuga facilis a cupiditate, dicta, excepturi assumenda, dolor quisquam odit numquam eveniet deleniti. Ducimus, ex facere. Quae voluptates quod cupiditate quas quisquam sequi asperiores ullam non necessitatibus sapiente, laborum fuga hic distinctio blanditiis doloremque, accusantium provident eveniet nam temporibus error ducimus facere tenetur nostrum. Dolorum excepturi aut sequi sunt voluptatum. ",
     images: [
-      "assets/images/projects/bg1.png",
-      "assets/images/projects/bg2.png",
-      "assets/images/projects/bg3.png",
-      "assets/images/projects/bg4.png"
+      "assets/images/projects/bg1.PNG",
+      "assets/images/projects/bg2.PNG",
+      "assets/images/projects/bg3.PNG",
+      "assets/images/projects/bg4.PNG"
     ],
     githubLink: "",
   },
 ]
-
-const myVariable = "Hello, world!";
-document.getElementById("my-paragraph").innerHTML = myVariable;
 
 function projectsFunction() {
 

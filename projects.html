@@ -7,6 +7,7 @@
     <script src="assets/js/script.js"></script>
 </head>
 
+
 <body onload="projectsFunction()">
     <header>
         <nav>
@@ -40,16 +41,21 @@
                 <div class="image-container">
                     <img src="" alt="" id="project-image">
                     <p id="image-info">x / x</p>
-                    <button id="image-prev-btn">Önceki</button>
-                    <button id="image-next-btn">Sonraki</button>
+                    <div class="color-7" id="btn-click">
+                        <p>
+                            <button id="image-prev-btn" class="btn btn-7 btn-7c btn-icon-only icon-arrow-right">Previous</button>
+                            <button id="image-next-btn" class="btn btn-7 btn-7d btn-icon-only icon-remove">Next</button>
+                        </p>
+                    </div>
+                    
                 </div>    
             </div>     
             
         </div>
         <div class="project-navigation">
-            <button id="prev-btn">Önceki</button>
+            <button id="prev-btn">Previous</button>
             <p style="display: inline;" id="project-number"></p>
-            <button id="next-btn">Sonraki</button>
+            <button id="next-btn">Next</button>
         </div>
     </section>
 
@@ -58,7 +64,7 @@
         <p class="text-muted">©2023 Kasım Selimhan Baltaş | Tüm hakları saklıdır.</p>
     </footer>
 
-
+    <script src="assets/js/classie.js"></script>
 </body>
 
 </html>

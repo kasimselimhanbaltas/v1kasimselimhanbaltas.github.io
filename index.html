@@ -5,9 +5,18 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <meta name="google-site-verification" content="Lzg8xUSxO_Tvqnr26CCyv9FV29tXwhBxyukXVU_Nmv8" />
     <script src="/assets/js/script.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+    <script src="/assets/js/modernizr.custom.js"></script>
 </head>
 
+<audio style="display:none" controls autoplay loop>
+    <source src="assets/music.mp3" type="audio/ogg">
+</audio>
+
 <body>
+    
     <section class="hero" id="home">
         <nav>
             <img src="assets/images/sb.png" class="brand">
@@ -23,7 +32,21 @@
             </div>
         </nav>
         <div class="introduce">
-            <img src="assets/images/campus.jpg" alt="pp">
+            <ul class="grid cs-style-6">
+                <li>
+                    <figure>
+                        <img src="assets/images/campus.jpg" alt="img01">
+                        <figcaption>
+                            <h3>Camera</h3>
+                            <span>AFA</span>
+                            <a id="phfooter" target="_blank" href="https://ahmetfarukalkan.github.io/">
+                                <!-- <img id="afa" src="https://drive.google.com/uc?export=view&id=1rt0QhV5aEzez4eTwHiPGG4MEyfwnu9KL" alt=""> -->
+                                <img id="afa" src="https://ahmetfarukalkan.github.io/images/1671446269524.jpg" alt="">
+                            </a>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
             <div>
                 <h1>Hello, I am <span>Kasım Selimhan BALTAŞ</span></h1>
                 <h2>I am studying Computer Engineering <br> at Marmara University.</h2>
@@ -34,6 +57,32 @@
         <p class="text-muted">©2023 Kasım Selimhan Baltaş | Tüm hakları saklıdır.</p>
     </footer>
     
-
 </body>
 </html>
+<style scoped>
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.introduce img{
+    width: 100vw;
+}
+#phfooter{
+    all: none  !important;
+    width: 100px !important;
+    height: 100px;
+    background-color: transparent;
+
+}
+#afa{
+    margin-top: 5px;
+    width: 100px !important;
+    height: 100px  !important;
+    transition: none !important;
+    transform: none !important;
+    z-index: 0;
+}
+</style>
