@@ -7,38 +7,52 @@
 html {
     scroll-behavior: smooth;
 }
-
+header {
+    height: 7.5vh;
+}
 .hero {
-    height: 100vh;
+    height: 92.5vh;
+    background-color: #161616;
 }
 
 nav {
+    height: 7.5vh;
+    background-color: #212529;
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    background-image: url(../images/bg.jpg);
+    justify-content: space-between;
+}
+.contacts{
+    display:flex;
+    padding: 0;
+}
+.contacts img{
+    padding: 0;
 }
 
 .disabled {
     cursor: not-allowed;
 }
 nav img {
-    max-height: 35px;
-    margin-right: 200px;
+    max-height: 25px;
     text-align: center;
     padding: 10px;
 }
+.brand {
+    margin-left: 5vw;
+    margin-top: 0.5vh;
+}
 
 nav .links {
+    margin-right: 40vw;
     display: flex;
-    width: 30vmax;
+    width: 20vmax;
     justify-content: space-around;
 }
 
 nav a {
-    padding: 20px;
+    padding: 15px;
     text-decoration: none;
-    color: darkcyan;
+    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     letter-spacing: 1px;
@@ -50,12 +64,13 @@ nav a {
     /* background-color: rgb(199, 199, 199); */
     width: auto;
     position: relative;
-    top: 50%;
+    top: 55%;
     transform: translateY(-70%);
     height: 350px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    color:white;
 }
 
 .introduce img {
@@ -81,7 +96,7 @@ nav a {
 }
 
 .introduce img:hover {
-    transform: scale(1.2) translateX(5%);
+    transform:  translateX(5%);
 }
 
 .about {
@@ -100,24 +115,65 @@ h2 {
     font-size: 30px;
 }
 
+.footer {
+    height: 7.5vh;
+    display: fles;
+    align-items: center;
+    background-color: #212529;
+    position: relative;
+}
+
+.footer p{
+    position: absolute;
+    top: 2vh; left: 5vw;
+    color: white;
+}
+
+.aboutcontainer {
+    padding: 40px;
+    display: flex;
+}
+.about {
+    background-color: #161616;
+    height: 85vh;
+    text-align: center;
+    color: white;
+}
+.about h2 {
+    padding-top: 5vh;
+}
+
+.about p {
+    margin-top: 5vh;
+    line-height: 25px;
+}
+
+h2 {
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
 .skillscontainer {
     margin: auto;
-    min-width: 60%;
+    min-width: 40%;
     padding: 0px auto;
 }
 
 .skills {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
-
+.skillc{
+    padding: 0 40px;
+}
 .skill {
     border: 10px groove silver;
     border-radius: 10%;
     width: 85px;
-    height: 110px;
+    height: 100px;
     position: relative;
-    padding: 0 10px;
+    padding: 0 5px;
     margin: 10px 0;
     transition: transform .5s;
 }
@@ -127,7 +183,7 @@ h2 {
 }
 
 .skill img {
-    max-height: 50px;
+    max-height: 40px;
     padding: 10px;
     padding-bottom: 30px;
 }
@@ -136,32 +192,33 @@ h2 {
     position: absolute;
     width: 100%;
     bottom: 0;
-    transform: translateX(-10%);
+    font-size: 15px;
+    transform: translateX(-5%);
 }
 
-.aboutcontainer {
-    background: url(../images/bg.jpg);
-    margin-top: 2%;
-    padding: 40px;
+.projectscontainer {
+    background-color: #161616;
+    height: 85vh;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.project-container {
+    margin-top: 5vh;
     display: flex;
 }
-
-.contact {
-    padding: auto;
+.image-container{
+    display: inline-block;
+    width: 60vw;
+    padding: 10px 5px;
+    border: 1px solid white;
 }
-
-.platforms {
-    margin-top: 2%;
-    padding: 30px;
-    background: url(../images/bg.jpg);
-    display: flex;
-    justify-content: center;
+.projectscontainer img{
+    height: 50vh;
 }
-
-.platform {
-    padding: 0px 100px;
-}
-
-.platform img {
-    width: 35px;
+.project-navigation{
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
 }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Selimhan Baltaş</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta name="google-site-verification" content="Lzg8xUSxO_Tvqnr26CCyv9FV29tXwhBxyukXVU_Nmv8" />
+    <script src="assets/js/script.js"></script>
+</head>
+
+<body onload="projectsFunction()">
+    <header>
+        <nav>
+            <img src="assets/images/sb.png" class="brand">
+            <div class="links">
+                <a href="/">Home</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+            </div>
+            <div class="contacts">
+                <a target="blank" href="https://www.linkedin.com/in/kas%C4%B1m-selimhan-balta%C5%9F-2b3832201/"><img
+                        src="assets/images/linkedin.png" alt=""></a>
+                <a target="blank" href="https://github.com/kasimselimhanbaltas"><img src="assets/images/github.png"
+                        alt=""></a>
+                <a target="blank" href="mailto:selimhanbaltas@gmail.com"><img src="assets/images/gmail.png" alt=""></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="projectscontainer">
+        <h1>Some of my projects</h1>
+        <h2 id="project-name"></h2>
+
+        <div id="project-container" class="project-container">
+            <div class="pl">
+                <p id="project-description"></p>
+                <a id="project-github" href=""></a>
+                
+            </div>
+            <div class="pr">
+                <div class="image-container">
+                    <img src="" alt="" id="project-image">
+                    <p id="image-info">x / x</p>
+                    <button id="image-prev-btn">Önceki</button>
+                    <button id="image-next-btn">Sonraki</button>
+                </div>    
+            </div>     
+            
+        </div>
+        <div class="project-navigation">
+            <button id="prev-btn">Önceki</button>
+            <p style="display: inline;" id="project-number"></p>
+            <button id="next-btn">Sonraki</button>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <p class="text-muted">©2023 Kasım Selimhan Baltaş | Tüm hakları saklıdır.</p>
+    </footer>
+
+
+</body>
+
+</html>
+
+<style scoped>
+    .hero {
+        height: auto;
+    }
+    .pr{
+        padding: 0 0 0 50px;
+    }
+    .pl {
+        width: 40vw;
+        padding: 100px 0 0 50px;
+    }
+    #project-description{
+        display: block;
+        text-align: left;
+    }
+</style>
