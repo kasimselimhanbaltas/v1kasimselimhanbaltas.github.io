@@ -135,6 +135,27 @@ a:active {
 	color: #2c3f52;
 }
 
+
+
+
+.container > section {
+	margin: 0 auto;
+	padding: 5em 3em;
+	text-align: center;
+	color: #fff;
+}
+
+.container > section p {
+	position: relative;
+	margin: 0;
+	padding: 1em;
+	z-index: 1;
+}
+
+.container > section p.text {
+	font-size: 1.4em;
+}
+
 @media screen and (max-width: 25em) {
 
 	.codrops-icon span {

@@ -3,8 +3,10 @@
 <head>
     <title>Selimhan Baltaş</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/default.css">
     <meta name="google-site-verification" content="Lzg8xUSxO_Tvqnr26CCyv9FV29tXwhBxyukXVU_Nmv8" />
     <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/component.css">
 </head>
 
 
@@ -41,10 +43,10 @@
                 <div class="image-container">
                     <img src="" alt="" id="project-image">
                     <p id="image-info">x / x</p>
-                    <div class="color-7" id="btn-click">
+                    <div id="btn-click">
                         <p>
-                            <button id="image-prev-btn" class="btn btn-7 btn-7c btn-icon-only icon-arrow-right">Previous</button>
-                            <button id="image-next-btn" class="btn btn-7 btn-7d btn-icon-only icon-remove">Next</button>
+                            <button id="image-prev-btn" class="btn btn-1 btn-1f">Prev</button>
+                            <button id="image-next-btn" class="btn btn-1 btn-1f">Next</button>
                         </p>
                     </div>
                     
@@ -53,9 +55,9 @@
             
         </div>
         <div class="project-navigation">
-            <button id="prev-btn">Previous</button>
+            <button id="prev-btn" class="btn btn-1 btn-1f">Prev</button>
             <p style="display: inline;" id="project-number"></p>
-            <button id="next-btn">Next</button>
+            <button id="next-btn" class="btn btn-1 btn-1f">Next</button>
         </div>
     </section>
 
@@ -70,6 +72,9 @@
 </html>
 
 <style scoped>
+    button {
+        all: none;
+    }
     .hero {
         height: auto;
     }
