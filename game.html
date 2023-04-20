@@ -86,6 +86,7 @@
 <script>
     startGame = () => {
         let killCount = 0;
+        let direction = 'right';
         const character = document.getElementById('character');
         const gamespace = document.getElementById('gamespace');
         const kratos = document.getElementById('kratos');
@@ -128,7 +129,7 @@
             checkDistance();
             axe.style.visibility = "visible";
             console.log("I WILL MAKE YOU SUFFER")
-            if (axe.src === "https://kasimselimhanbaltas.github.io/game/axeR.png"){
+            if (direction === 'right'){
                 axe.classList.add('animateR');
                 setTimeout(() => {
                     axe.classList.remove('animateR');
@@ -148,7 +149,7 @@
             checkDistance2();
             boc.style.visibility = "visible";
             console.log("I WILL MAKE YOU SUFFER")
-            if (boc.src === "https://kasimselimhanbaltas.github.io/game/bocR.png"){
+            if (direction === 'right'){
                 boc.classList.add('animateR');
                 setTimeout(() => {
                     boc.classList.remove('animateR');
@@ -218,10 +219,11 @@
             // );
             const characterRect = character.getBoundingClientRect();
             const thorRect = thor.getBoundingClientRect();
+            console.log("*** character: ", characterRect.x, characterRect.y, "enemy: ", thorRect.x, thorRect.y)
             const distance = Math.abs(characterRect.x - thorRect.x);
             const heightDiff = Math.abs(characterRect.y - thorRect.y);
             if (distance <= 380 && heightDiff < 100) {
-                if(kratos.src === "https://kasimselimhanbaltas.github.io/game/kratosR.png"){
+                if(direction === 'right'){
                     if(characterRect.x - thorRect.x <= 0){
                         killCount += 1;
                         if(killCount === 20) { //game finished
@@ -236,7 +238,7 @@
                         }
                     }
                 }
-                else if(kratos.src === "https://kasimselimhanbaltas.github.io/game/kratosL.png"){
+                else if(direction === 'left'){
                     if(characterRect.x - thorRect.x >= 0){
                         killCount += 1;
                         if(killCount === 20) { //game finished
@@ -263,7 +265,7 @@
             const distance = Math.abs(characterRect.x - thorRect.x);
             const heightDiff = Math.abs(characterRect.y - thorRect.y);
             if (distance <= 260 && heightDiff < 100) {
-                if(kratos.src === "https://kasimselimhanbaltas.github.io/game/kratosR.png"){
+                if(direction === 'right'){
                     if(characterRect.x - thorRect.x <= 0){
                         killCount += 1;
                         if(killCount === 20) { //game finished
@@ -278,7 +280,7 @@
                         
                     }
                 }
-                else if(kratos.src === "https://kasimselimhanbaltas.github.io/game/kratosL.png"){
+                else if(direction === 'left'){
                     if(characterRect.x - thorRect.x >= 0){
                         killCount += 1;
                         if(killCount === 20) { //game finished
@@ -313,12 +315,14 @@
             character.style.top = `${Math.min(gamespace.offsetHeight - character.offsetHeight + 50, character.offsetTop + speed)}px`;
         }
         if (keys['a'] || keys['ArrowLeft']) {
+            direction = 'left';
             axe.src = "game/axeL.png"
             boc.src = "game/bocL.png"
             kratos.src = "game/kratosL.png"
             character.style.left = `${Math.max(0, character.offsetLeft - speed)}px`;
         }
         if (keys['d'] || keys['ArrowRight']) {
+            direction = 'right';
             axe.src = "game/axeR.png"
             boc.src = "game/bocR.png"
             kratos.src = "game/kratosR.png"
