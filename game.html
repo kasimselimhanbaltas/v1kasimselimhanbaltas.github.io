@@ -9,8 +9,8 @@
 </head>
 
 
-<body onload="startGame()">
-    <audio autoplay id="themeMusic">
+<body id="mybody" onload="startGame()">
+    <audio autoplay id="themeMusic" style="volume: 0.4">
         <source src="game/Rage of Sparta.mp3" type="audio/mpeg">
     </audio>
 
@@ -39,7 +39,9 @@
             <p style="font-size: 10px;">
                 Movement: ↑←↓→ or WASD <br>
                 Axe: Left click<br>
-                Blades: Right click
+                Blades: Right click <br>
+                Special Skill: Q - Q <br>
+                Note: Stay still on 2. Q
             </p>
             
         </div>
@@ -62,7 +64,7 @@
                 <img id="kratos" src="game/kratosR.png" alt="">
                 <img id="axe" src="game/axeR.png" alt="">
                 <img id="boc" src="game/bocR.png" alt="">
-                <img id="boc" class="sec" src="game/bocR.png" alt="">
+                <img id="boo" src="game/boo.png" alt="">
             </div>
             <img id="thor" src="game/Thor_Ragnarok.png" alt="">
 
@@ -92,6 +94,7 @@
         const kratos = document.getElementById('kratos');
         const axe = document.getElementById('axe');
         const boc = document.getElementById('boc');
+        const boo = document.getElementById('boo');
         const thor = document.getElementById('thor');
         const score = document.getElementById('score');
         score.textContent = killCount + " / 20" 
@@ -101,6 +104,8 @@
         const muteButton = document.getElementById('muteButton');
         const unMuteButton = document.getElementById('unMuteButton');
         const goBack = document.getElementById('goBack');
+        const mybody = document.getElementById('mybody');
+        
 
         goBack.addEventListener('click', () => {
             window.history.back();
@@ -194,6 +199,7 @@
         }
         const playAgain = () =>{
             character.style.transition = "all 0s";
+            charge = 0;
             killCount = 0;
             thor.style.display = "inline-block";
             character.style.width = "6vw"
@@ -202,7 +208,7 @@
             score.textContent = killCount + " / 20" 
             playAgainBtn.style.display = "none";
         }
-
+        let lock = 0;
         function moveThor() {
             const maxWidth = gamespace.offsetWidth - thor.offsetWidth;
             const maxHeight = gamespace.offsetHeight - thor.offsetHeight;
@@ -210,6 +216,7 @@
             const newTop = Math.floor(Math.random() * maxHeight);
             thor.style.left = `${newLeft}px`;
             thor.style.top = `${newTop}px`;
+            lock = 0
         }
         function checkDistance() {
             // const characterRect = character.getBoundingClientRect();
@@ -217,42 +224,50 @@
             // const distance = Math.sqrt(
             //     (characterRect.x - thorRect.x) ** 2 + (characterRect.y - thorRect.y) ** 2
             // );
-            const characterRect = character.getBoundingClientRect();
-            const thorRect = thor.getBoundingClientRect();
-            console.log("*** character: ", characterRect.x, characterRect.y, "enemy: ", thorRect.x, thorRect.y)
-            const distance = Math.abs(characterRect.x - thorRect.x);
-            const heightDiff = Math.abs(characterRect.y - thorRect.y);
-            if (distance <= 380 && heightDiff < 100) {
-                if(direction === 'right'){
-                    if(characterRect.x - thorRect.x <= 0){
-                        killCount += 1;
-                        if(killCount === 20) { //game finished
-                            endGame();
-                            killCount += 1;
-                        }
-                        else{
-                            setTimeout(() =>{
-                                moveThor();
-                                score.textContent = killCount + " / 20" 
-                            }, 350)
+            if(lock === 0) {
+                const characterRect = character.getBoundingClientRect();
+                const thorRect = thor.getBoundingClientRect();
+                const axeRect = axe.getBoundingClientRect();
+                console.log("*** character: ", characterRect.x, characterRect.y, "enemy: ", thorRect.x, thorRect.y)
+                /*console.log("*** axe: ", axeRect.x, axeRect.y)*/
+                const distance = Math.abs(characterRect.x - thorRect.x);
+                const heightDiff = Math.abs(characterRect.y - thorRect.y);
+                if (distance <= 380 && heightDiff < 100) {
+                    if(direction === 'right'){
+                        if(characterRect.x - thorRect.x <= 0){
+                            killCount += 2;
+                            lock = 1;
+                            if(killCount >= 20) { //game finished
+                                endGame();
+                                killCount += 2;
+                            }
+                            else{
+                                setTimeout(() =>{
+                                    moveThor();
+                                    score.textContent = killCount + " / 20" 
+                                }, 350)
+                            }
                         }
                     }
-                }
-                else if(direction === 'left'){
-                    if(characterRect.x - thorRect.x >= 0){
-                        killCount += 1;
-                        if(killCount === 20) { //game finished
-                            endGame();
-                        }
-                        else{
-                            setTimeout(() =>{
-                                moveThor();
-                                score.textContent = killCount + " / 20" 
-                            }, 350)
+                    else if(direction === 'left'){
+                        if(characterRect.x - thorRect.x >= 0){
+                            killCount += 2;
+                            lock = 1;
+                            if(killCount >= 20) { //game finished
+                                endGame();
+                                killCount += 2;
+                            }
+                            else{
+                                setTimeout(() =>{
+                                    moveThor();
+                                    score.textContent = killCount + " / 20" 
+                                }, 350)
+                            }
                         }
                     }
                 }
             }
+            
         }   
         function checkDistance2() {
             // const characterRect = character.getBoundingClientRect();
@@ -260,43 +275,93 @@
             // const distance = Math.sqrt(
             //     (characterRect.x - thorRect.x) ** 2 + (characterRect.y - thorRect.y) ** 2
             // );
-            const characterRect = character.getBoundingClientRect();
-            const thorRect = thor.getBoundingClientRect();
-            const distance = Math.abs(characterRect.x - thorRect.x);
-            const heightDiff = Math.abs(characterRect.y - thorRect.y);
-            if (distance <= 260 && heightDiff < 100) {
-                if(direction === 'right'){
-                    if(characterRect.x - thorRect.x <= 0){
-                        killCount += 1;
-                        if(killCount === 20) { //game finished
-                            endGame();
+            if(lock === 0){
+                const characterRect = character.getBoundingClientRect();
+                const thorRect = thor.getBoundingClientRect();
+                const distance = Math.abs(characterRect.x - thorRect.x);
+                const heightDiff = Math.abs(characterRect.y - thorRect.y);
+                if (distance <= 260 && heightDiff < 100) {
+                    if(direction === 'right'){
+                        if(characterRect.x - thorRect.x <= 0){
+                            killCount += 1;
+                            lock = 1;
+                            if(killCount === 20) { //game finished
+                                endGame();
+                            }
+                            else{
+                                setTimeout(() =>{
+                                    moveThor();
+                                    score.textContent = killCount + " / 20" 
+                                }, 100)
+                            }
+                            
                         }
-                        else{
-                            setTimeout(() =>{
-                                moveThor();
-                                score.textContent = killCount + " / 20" 
-                            }, 100)
-                        }
-                        
                     }
-                }
-                else if(direction === 'left'){
-                    if(characterRect.x - thorRect.x >= 0){
-                        killCount += 1;
-                        if(killCount === 20) { //game finished
-                            endGame();
-                        }
-                        else{
-                            setTimeout(() =>{
-                                moveThor();
-                                score.textContent = killCount + " / 20" 
-                            }, 100)
+                    else if(direction === 'left'){
+                        if(characterRect.x - thorRect.x >= 0){
+                            killCount += 1;
+                            lock = 1;
+                            if(killCount === 20) { //game finished
+                                endGame();
+                            }
+                            else{
+                                setTimeout(() =>{
+                                    moveThor();
+                                    score.textContent = killCount + " / 20" 
+                                }, 100)
+                            }
                         }
                     }
                 }
             }
+            
         }   
-
+        function checkDistance3() {
+            // const characterRect = character.getBoundingClientRect();
+            // const thorRect = thor.getBoundingClientRect();
+            // const distance = Math.sqrt(
+            //     (characterRect.x - thorRect.x) ** 2 + (characterRect.y - thorRect.y) ** 2
+            // );
+            if(lock === 0){
+                const characterRect = character.getBoundingClientRect();
+                const thorRect = thor.getBoundingClientRect();
+                const heightDiff = Math.abs(characterRect.y - thorRect.y);
+                if (heightDiff < 70) {
+                    if(direction === 'right'){
+                        if(characterRect.x - thorRect.x <= 0){
+                            lock = 1;
+                            killCount += 10;
+                            if(killCount >= 20) { //game finished
+                                endGame();
+                                killCount += 10;
+                            }
+                            else{
+                                setTimeout(() =>{
+                                    moveThor();
+                                    score.textContent = killCount + " / 20" 
+                                }, 350)
+                            }
+                        }
+                    }
+                    else if(direction === 'left'){
+                        if(characterRect.x - thorRect.x >= 0){
+                            lock = 1;
+                            killCount += 10;
+                            if(killCount >= 20) { //game finished
+                                endGame();
+                            }
+                            else{
+                                setTimeout(() =>{
+                                    moveThor();
+                                    score.textContent = killCount + " / 20" 
+                                }, 350)
+                            }
+                        }
+                    }
+                }
+            }
+           
+        }   
         document.addEventListener('keydown', (event) => {
         keys[event.key] = true;
         });
@@ -304,6 +369,46 @@
         document.addEventListener('keyup', (event) => {
         keys[event.key] = false;
         });
+
+
+        let charge = 0;
+        document.addEventListener('keypress', event => {
+            if(event.key === 'q'){
+                console.log(charge);
+                if(charge === 0){
+                    boo.style.visibility = 'visible';
+                    charge += 1;
+                    mybody.style.background = "darkred"
+                } else if(charge > 0) {
+                    if(direction === 'right'){
+                        checkDistance3();
+                        character.style.transition = "all .5s ease"
+                        for (let i = 0; i < 50; i++){
+                            character.style.left = `${Math.min(gamespace.offsetWidth - character.offsetWidth, character.offsetLeft + 1000)}px`;
+                        }
+                        character.style.transition = "all 0s ease"
+                        charge = -1;
+                        setTimeout(() => {
+                            boo.style.visibility = 'hidden';
+                        }, 500)
+                        mybody.style.background = "linear-gradient(135deg, #add8e6, #ffffff, #ffe4e1)"
+
+                    } else if(direction === 'left'){
+                        checkDistance3();
+                        character.style.transition = "all .5s ease"
+                        for (let i = 0; i < 50; i++){
+                            character.style.left = `${Math.max(0, character.offsetLeft - 1000)}px`;
+                        }
+                        character.style.transition = "all 0s ease"
+                        charge = -1;
+                        setTimeout(() => {
+                            boo.style.visibility = 'hidden';
+                        }, 500)
+                    }
+                }
+            }
+            
+        })
 
         setInterval(() => {
         const speed = 3;
@@ -316,6 +421,7 @@
         }
         if (keys['a'] || keys['ArrowLeft']) {
             direction = 'left';
+            boo.style.transform = " translateX(-250%) translateY(-10%) rotate(-90deg)"
             axe.src = "game/axeL.png"
             boc.src = "game/bocL.png"
             kratos.src = "game/kratosL.png"
@@ -323,6 +429,7 @@
         }
         if (keys['d'] || keys['ArrowRight']) {
             direction = 'right';
+            boo.style.transform = " translateX(-70%) translateY(-10%) rotate(90deg)"
             axe.src = "game/axeR.png"
             boc.src = "game/bocR.png"
             kratos.src = "game/kratosR.png"
@@ -349,6 +456,7 @@ body{
     height: 20vh;
     top: 40%;
     left: 20%;
+    transition: all 0s ease;
 }
 #thor{
     top: 40%;
@@ -365,8 +473,12 @@ body{
     position: absolute;
     transition: all .1s linear;
 }
-.sec{
-    top: 100px;
+#boo{
+    width: 3vw;
+    transform: translateX(-70%) translateY(-10%) rotate(90deg);
+    position: absolute;
+    visibility: hidden;
+    transition: all .1s linear;
 }
 #boc.animateL {
   visibility: visible;
@@ -415,7 +527,7 @@ body{
 
 .progress-bar {
   height: 100%;
-  background-color: darkred;
+  background-color: purple;
   width: 100%;
 }
 #playAgain{
