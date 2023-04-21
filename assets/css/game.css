@@ -9,19 +9,24 @@ body{
 }
 .character{
     width: 6vw;
-    height: 20vh;
+    height: 10vw;
     top: 40%;
     left: 20%;
     transition: all 0s ease;
 }
-#thor{
-    top: 40%;
-    left: 80%;
-}
-
 .character img{
     width: 100%;
 }
+.enemy{
+    width: 3.5vw;
+    height: 10vw;
+    top: 40%;
+    left: 80%;
+}
+.enemy img{
+    width: 100%;
+}
+
 #boc{
     width: 3vw;
     transform: translateX(-100%) translateY(50%);
@@ -61,14 +66,8 @@ body{
   transform: translateX(1200%) rotate(720deg);
 }
 
-#thor{
-    position: absolute;
-    height: 15vh;
-}
 #score{
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
+    z-index: 9;
 }
 #timer{
     position: absolute;
@@ -91,6 +90,16 @@ body{
   height: 100%;
   background-color: purple;
   width: 100%;
+  opacity: 0.6;
+}
+#damage{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+#damage p{
+    margin: 0;
+    opacity: 1;
 }
 #playAgain{
     bottom: 0;

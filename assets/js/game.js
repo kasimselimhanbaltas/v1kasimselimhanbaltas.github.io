@@ -1,5 +1,5 @@
 startGame = () => {
-    let killCount = 0;
+    let enemyHealth = 20;
     let direction = 'right';
     const character = document.getElementById('character');
     const gamespace = document.getElementById('gamespace');
@@ -7,9 +7,9 @@ startGame = () => {
     const axe = document.getElementById('axe');
     const boc = document.getElementById('boc');
     const boo = document.getElementById('boo');
-    const thor = document.getElementById('thor');
+    const thor = document.getElementById('enemy');
     const score = document.getElementById('score');
-    score.textContent = killCount + " / 20" 
+    score.textContent = enemyHealth + " / 20" 
     const playAgainBtn = document.getElementById('playAgain');
     const myAudio = document.getElementById('myAudio');
     myAudio.volume = "0.1";
@@ -18,7 +18,29 @@ startGame = () => {
     const unMuteButton = document.getElementById('unMuteButton');
     const goBack = document.getElementById('goBack');
     const mybody = document.getElementById('mybody');
+    const damageDiv = document.getElementById('damage');
+    const mybg = document.getElementById('mybg');
     
+    console.log(`Ekran Boyutu: ${window.innerWidth} x ${window.innerHeight}`);
+    
+    // Damage message
+    const dmgMessage = (dmg) => {
+        const newTag = document.createElement("p");
+        newTag.textContent = `-= ${dmg} damage delivered =-`;
+        
+        // If there are already tags in the div, insert the new tag below them
+        if (damageDiv.children.length > 0) {
+            damageDiv.insertBefore(newTag, damageDiv.firstChild);
+        } else {
+            damageDiv.appendChild(newTag);
+        }
+        
+        // Wait for 2 seconds, then remove the tag
+        setTimeout(() => {
+            damageDiv.removeChild(newTag);
+        }, 4000);   
+    };
+
 
     goBack.addEventListener('click', () => {
         window.history.back();
@@ -85,7 +107,7 @@ startGame = () => {
         
     });
             
-            
+
 
     const keys = {};
 
@@ -93,9 +115,9 @@ startGame = () => {
 
 
     const intervalId = setInterval(() => {
-        const width = 100 - (killCount * 5);
+        const width = 100 - ((20 - enemyHealth) * 5);
         progressBar.style.width = `${width}%`;
-        progressBar.setAttribute('aria-valuenow', killCount);
+        progressBar.setAttribute('aria-valuenow', enemyHealth);
     },50);
 
 
@@ -126,9 +148,27 @@ startGame = () => {
     const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     const endGame = async() => {
+        enemyHealth = 0;
+        score.textContent = enemyHealth + " / 20" 
+        //end game message
+        const newTag = document.createElement("p");
+        newTag.textContent = `-= Enemy slaughtered in ${seconds} seconds! =-`;
+        
+        // If there are already tags in the div, insert the new tag below them
+        if (damageDiv.children.length > 0) {
+            damageDiv.insertBefore(newTag, damageDiv.firstChild);
+        } else {
+            damageDiv.appendChild(newTag);
+        }
+        
+        // Wait for 2 seconds, then remove the tag
+        setTimeout(() => {
+            damageDiv.removeChild(newTag);
+        }, 4000);
+
         stopTimer();
         progressBar.style.width = "0%";
-        score.textContent = "20 / 20" 
+        //score.textContent = "20 / 20" 
 
         thor.style.transition = "all 1s"
         thor.style.opacity = 0;
@@ -150,14 +190,14 @@ startGame = () => {
     const playAgain = () =>{
         character.style.transition = "all 0s";
         charge = 0;
-        killCount = 0;
+        enemyHealth = 20;
         lock = 0;
         thor.style.display = "inline";
         character.style.width = "6vw"
         axe.style.width = "2vw"
         boc.style.width = "3vw"
         boo.style.width = "3vw"
-        score.textContent = killCount + " / 20" 
+        score.textContent = enemyHealth + " / 20" 
         playAgainBtn.style.display = "none";
         seconds = 0;
         minutes = 0;
@@ -202,35 +242,35 @@ startGame = () => {
                 if(direction === 'right'){
                     if(characterRect.x - thorRect.x <= 0){
                         hitsound();
-                        killCount += 2;
+                        enemyHealth -= 2;
+                        dmgMessage(2);
                         lock = 1;
-                        if(killCount >= 20) { //game finished
+                        if(enemyHealth <= 0) { //game finished
                             endGame();
-                            killCount += 2;
                         }
                         else{
                             setTimeout(() =>{
                                 moveThor();
-                                score.textContent = killCount + " / 20" 
                             }, 350)
                         }
+                        score.textContent = enemyHealth + " / 20" 
                     }
                 }
                 else if(direction === 'left'){
                     if(characterRect.x - thorRect.x >= 0){
                         hitsound();
-                        killCount += 2;
+                        enemyHealth -= 2;
+                        dmgMessage(2);
                         lock = 1;
-                        if(killCount >= 20) { //game finished
+                        if(enemyHealth <= 0) { //game finished
                             endGame();
-                            killCount += 2;
                         }
                         else{
                             setTimeout(() =>{
                                 moveThor();
-                                score.textContent = killCount + " / 20" 
                             }, 350)
                         }
+                        score.textContent = enemyHealth + " / 20" 
                     }
                 }
             }
@@ -251,34 +291,35 @@ startGame = () => {
                 if(direction === 'right'){
                     if(characterRect.x - thorRect.x <= 0){
                         hitsound();
-                        killCount += 1;
+                        dmgMessage(1);
+                        enemyHealth -= 1;
                         lock = 1;
-                        if(killCount === 20) { //game finished
+                        if(enemyHealth <= 0) { //game finished
                             endGame();
                         }
                         else{
                             setTimeout(() =>{
                                 moveThor();
-                                score.textContent = killCount + " / 20" 
                             }, 100)
-                        }
-                        
+                        }                        
                     }
+                    score.textContent = enemyHealth + " / 20" 
                 }
                 else if(direction === 'left'){
                     if(characterRect.x - thorRect.x >= 0){
                         hitsound();
-                        killCount += 1;
+                        dmgMessage(1);
+                        enemyHealth -= 1;
                         lock = 1;
-                        if(killCount === 20) { //game finished
+                        if(enemyHealth <= 0) { //game finished
                             endGame();
                         }
                         else{
                             setTimeout(() =>{
                                 moveThor();
-                                score.textContent = killCount + " / 20" 
                             }, 100)
                         }
+                        score.textContent = enemyHealth + " / 20" 
                     }
                 }
             }
@@ -301,32 +342,33 @@ startGame = () => {
                 if(direction === 'right'){
                     if(characterRect.x - thorRect.x <= 0){
                         lock = 1;
-                        killCount += 10;
-                        if(killCount >= 20) { //game finished
+                        dmgMessage(10);
+                        enemyHealth -= 10;
+                        if(enemyHealth <= 0) { //game finished
                             endGame();
-                            killCount += 10;
                         }
                         else{
                             setTimeout(() =>{
                                 moveThor();
-                                score.textContent = killCount + " / 20" 
                             }, 350)
                         }
+                        score.textContent = enemyHealth + " / 20" 
                     }
                 }
                 else if(direction === 'left'){
                     if(characterRect.x - thorRect.x >= 0){
                         lock = 1;
-                        killCount += 10;
-                        if(killCount >= 20) { //game finished
+                        dmgMessage(10);
+                        enemyHealth -= 10;
+                        if(enemyHealth <= 0) { //game finished
                             endGame();
                         }
                         else{
                             setTimeout(() =>{
                                 moveThor();
-                                score.textContent = killCount + " / 20" 
                             }, 350)
                         }
+                        score.textContent = enemyHealth + " / 20" 
                     }
                 }
             }
@@ -341,43 +383,48 @@ startGame = () => {
     keys[event.key] = false;
     });
 
+    const specialSkill = async() =>{
+        console.log(charge);
+        if(charge === 0){
+            boo.style.visibility = 'visible';
+            charge += 1;
+            mybody.style.background = "darkred"
+        } else if(charge > 0) {
+            if(direction === 'right'){
+                await wait(500);
+                checkDistance3();
+                character.style.transition = "all .5s ease"
+                for (let i = 0; i < 50; i++){
+                    character.style.left = `${Math.min(gamespace.offsetWidth - character.offsetWidth, character.offsetLeft + 1000)}px`;
+                }
+                character.style.transition = "all 0s ease"
+                charge = -1;
+                setTimeout(() => {
+                    boo.style.visibility = 'hidden';
+                }, 500)
+                mybody.style.background = "linear-gradient(135deg, #add8e6, #ffffff, #ffe4e1)"
+
+            } else if(direction === 'left'){
+                await wait(500);
+                checkDistance3();
+                character.style.transition = "all .5s ease"
+                for (let i = 0; i < 50; i++){
+                    character.style.left = `${Math.max(0, character.offsetLeft - 1000)}px`;
+                }
+                character.style.transition = "all 0s ease"
+                charge = -1;
+                setTimeout(() => {
+                    boo.style.visibility = 'hidden';
+                }, 500)
+                mybody.style.background = "linear-gradient(135deg, #add8e6, #ffffff, #ffe4e1)"
+            }
+        }
+    }
 
     let charge = 0;
     document.addEventListener('keypress', event => {
-        if(event.key === 'q'){
-            console.log(charge);
-            if(charge === 0){
-                boo.style.visibility = 'visible';
-                charge += 1;
-                mybody.style.background = "darkred"
-            } else if(charge > 0) {
-                if(direction === 'right'){
-                    checkDistance3();
-                    character.style.transition = "all .5s ease"
-                    for (let i = 0; i < 50; i++){
-                        character.style.left = `${Math.min(gamespace.offsetWidth - character.offsetWidth, character.offsetLeft + 1000)}px`;
-                    }
-                    character.style.transition = "all 0s ease"
-                    charge = -1;
-                    setTimeout(() => {
-                        boo.style.visibility = 'hidden';
-                    }, 500)
-                    mybody.style.background = "linear-gradient(135deg, #add8e6, #ffffff, #ffe4e1)"
-
-                } else if(direction === 'left'){
-                    checkDistance3();
-                    character.style.transition = "all .5s ease"
-                    for (let i = 0; i < 50; i++){
-                        character.style.left = `${Math.max(0, character.offsetLeft - 1000)}px`;
-                    }
-                    character.style.transition = "all 0s ease"
-                    charge = -1;
-                    setTimeout(() => {
-                        boo.style.visibility = 'hidden';
-                    }, 500)
-                    mybody.style.background = "linear-gradient(135deg, #add8e6, #ffffff, #ffe4e1)"
-                }
-            }
+        if(event.key === 'q'){ // Special skill
+            specialSkill();
         }
         
     })
