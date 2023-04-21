@@ -20,7 +20,12 @@ startGame = () => {
     const mybody = document.getElementById('mybody');
     const damageDiv = document.getElementById('damage');
     const mybg = document.getElementById('mybg');
-    
+
+    // Theme music delay
+    setTimeout(() => {
+        themeMusic.play()
+    }, 5000);
+
     console.log(`Ekran Boyutu: ${window.innerWidth} x ${window.innerHeight}`);
     
     // Damage message
@@ -326,7 +331,7 @@ startGame = () => {
         }
         
     }   
-    function checkDistance3() {
+    const checkDistance3 = async() => {
         // const characterRect = character.getBoundingClientRect();
         // const thorRect = thor.getBoundingClientRect();
         // const distance = Math.sqrt(
@@ -341,6 +346,7 @@ startGame = () => {
                     if(characterRect.x - thorRect.x <= 0){
                         myAudio.src = "game/rage.mp3";
                         myAudio.play();
+                        await wait(500);
 
                         lock = 1;
                         dmgMessage(10);
@@ -360,7 +366,7 @@ startGame = () => {
                     if(characterRect.x - thorRect.x >= 0){
                         myAudio.src = "game/rage.mp3";
                         myAudio.play();
-
+                        await wait(500);
                         lock = 1;
                         dmgMessage(10);
                         enemyHealth -= 10;
@@ -395,8 +401,7 @@ startGame = () => {
             mybody.style.background = "darkred"
         } else if(charge > 0) {
             if(direction === 'right'){
-                await wait(500);
-                checkDistance3();
+                await checkDistance3();
                 character.style.transition = "all .5s ease"
                 for (let i = 0; i < 50; i++){
                     character.style.left = `${Math.min(gamespace.offsetWidth - character.offsetWidth, character.offsetLeft + 1000)}px`;
@@ -409,8 +414,7 @@ startGame = () => {
                 mybody.style.background = "linear-gradient(135deg, #add8e6, #ffffff, #ffe4e1)"
 
             } else if(direction === 'left'){
-                await wait(500);
-                checkDistance3();
+                await checkDistance3();
                 character.style.transition = "all .5s ease"
                 for (let i = 0; i < 50; i++){
                     character.style.left = `${Math.max(0, character.offsetLeft - 1000)}px`;
