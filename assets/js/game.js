@@ -337,10 +337,11 @@ startGame = () => {
             const thorRect = thor.getBoundingClientRect();
             const heightDiff = Math.abs(characterRect.y - thorRect.y);
             if (heightDiff < 70) {
-                myAudio.src = "game/rage.mp3";
-                myAudio.play();
                 if(direction === 'right'){
                     if(characterRect.x - thorRect.x <= 0){
+                        myAudio.src = "game/rage.mp3";
+                        myAudio.play();
+
                         lock = 1;
                         dmgMessage(10);
                         enemyHealth -= 10;
@@ -357,6 +358,9 @@ startGame = () => {
                 }
                 else if(direction === 'left'){
                     if(characterRect.x - thorRect.x >= 0){
+                        myAudio.src = "game/rage.mp3";
+                        myAudio.play();
+
                         lock = 1;
                         dmgMessage(10);
                         enemyHealth -= 10;
