@@ -2,69 +2,108 @@
 
 <head>
     <title>Selimhan Baltaş</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <meta name="google-site-verification" content="Lzg8xUSxO_Tvqnr26CCyv9FV29tXwhBxyukXVU_Nmv8" />
-    <script src="assets/js/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/main.js" type="module"></script>
+        <script src="assets/js/skills.js" type="module"></script>
+
 </head>
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .navbar {
+        height: 7.5vh;
+        background-color: #212529;
+    }
+
+    .nav-item img {
+        height: 4vh;
+    }
+
+    footer {
+        height: 7.5vh;
+    }
+    .skills {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .skillc {
+        padding: 0 40px;
+    }
+
+    .skill {
+        border: 10px groove silver;
+        border-radius: 10%;
+        width: 100px;
+        height: 110px;
+        position: relative;
+        padding: 0 5px;
+        margin: 10px 0;
+        transition: transform .5s;
+    }
+
+    .skill:hover {
+        transform: rotate(360deg);
+    }
+
+    .skill img {
+        max-height: 80px;
+        padding: 10px;
+        padding-bottom: 30px;
+    }
+
+    .skill h3 {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        margin: 0;
+        font-size: 15px;
+        transform: translateX(-5%);
+    }
+</style>
 
 <body>
     <header>
-        <nav>
-            <img src="assets/images/sb.png" class="brand">
-            <div class="links">
-                <a href="/">Home</a>
-                <a href="skills.html">Skills</a>
-                <a href="projects.html">Projects</a>
-            </div>
-            <div class="contacts">
-                <a target="blank" href="https://www.linkedin.com/in/kas%C4%B1m-selimhan-balta%C5%9F-2b3832201/"><img src="assets/images/linkedin.png" alt=""></a>
-                <a target="blank" href="https://github.com/kasimselimhanbaltas"><img src="assets/images/github.png" alt=""></a>
-                <a target="blank" href="mailto:selimhanbaltas@gmail.com"><img src="assets/images/gmail.png" alt=""></a>
-            </div>
-        </nav>
+        <nav id="myNav"></nav>
     </header>
 
-    <section class="about" id="about">
+    <section class="about text-light text-center" id="about" style="height: 85vh;">
         <h2>What do I do?</h2>
-        <div class="aboutcontainer">
-            <div style="width: 60%">
+        <div class="row m-0" style="padding: 10vh 0 0 0; margin-right: 0px;">
+            <div class="col-5">
                 <h2>Profession</h2>
-                <p>I am improving myself in Web Development. I started my web development journey with Spring Boot and VueJS during my first internship.
+                <p>I am improving myself in Web Development. I started my web development journey with Spring Boot and
+                    VueJS during my first internship.
                     Currently, I am trying to get better in HTML, JS and CSS.</p>
             </div>
-            <div class="skillscontainer" id="skills">
+            <div class="skillscontainer col-7">
                 <h2 style="width: 100%;">My Skills</h2>
 
-                <div class="skills">
-                    <script>
-                        for (let i = 0; i < skills.length; i++) {
-                            const skill = skills[i];
-                            document.write(`
-                            <div class="skillc">
-                                <div class="skill">
-                                    <img src="/${skill.image}" alt="">
-                                    <h3>${skill.name}</h3>
-                                </div>  
-                            </div>
-                            
-                            `);
-                        }
-                    </script>
+                <div class="skills" id="skills">
                 </div>
             </div>
         </div>
     </section>
-    
+
     <footer class="footer">
-        <p class="text-muted">©2023 Kasım Selimhan Baltaş | Tüm hakları saklıdır.</p>
+        <p class="text-muted ms-5">©2023 Kasım Selimhan Baltaş | Tüm hakları saklıdır.</p>
     </footer>
-    
+
 
 </body>
+
 </html>
 
 <style scoped>
-.hero{
-    height: auto;
-}
+    .hero {
+        height: auto;
+    }
 </style>

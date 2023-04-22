@@ -31,7 +31,7 @@ startGame = () => {
     // Damage message
     const dmgMessage = (dmg) => {
         const newTag = document.createElement("p");
-        newTag.textContent = `-= ${dmg} damage delivered =-`;
+        newTag.textContent = `-= ${dmg} damage inflicted =-`;
         
         // If there are already tags in the div, insert the new tag below them
         if (damageDiv.children.length > 0) {

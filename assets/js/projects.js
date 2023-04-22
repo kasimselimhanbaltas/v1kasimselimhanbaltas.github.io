@@ -1,12 +1,5 @@
-const skills = [
-  { name: "VueJS", image: "assets/images/Vue.png" },
-  { name: "NuxtJS", image: "assets/images/nuxt.png" },
-  { name: "Spring Boot", image: "assets/images/springboot.png" },
-  { name: "CSS", image: "assets/images/css.png" },
-  { name: "JavaScript", image: "assets/images/js.png" },
-  { name: "Java", image: "assets/images/java.png" },
-  { name: "Python", image: "assets/images/python.png" },
-];
+import {getComponents} from './components.js'
+
 const projects = [
   {
     projectId: 1,
@@ -60,8 +53,8 @@ const projects = [
   },
 ]
 
-function projectsFunction() {
-
+window.onload = function() {
+  getComponents();
 
   let currentProjectIndex = 0; // Şu anki proje dizindeki ilk proje
   let imageIndex = 0;

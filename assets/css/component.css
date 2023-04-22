@@ -30,7 +30,7 @@
 	top: 0;
 	left: 0;
 	padding: 20px;
-	background: #212529;
+	background: #161616;
 	color: #ed4e6e;
 }
 
@@ -41,6 +41,7 @@
 }
 
 .grid figcaption span:before {
+	font-size: 12px;
 	content: 'by ';
 }
 
@@ -72,11 +73,13 @@
 
 .cs-style-6 figcaption {
 	height: 100%;
-	width: 600px;
+	width: 33vw;
 }
 
 .cs-style-6 figcaption h3 {
-	margin-top: 60%;
+	line-height: 5px;
+	font-size: 15px;
+	margin-top: 67%;
 }
 
 .cs-style-6 figcaption a {
