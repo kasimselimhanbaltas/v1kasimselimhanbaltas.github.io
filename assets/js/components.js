@@ -5,13 +5,14 @@ export function getComponents() {
     let activeClassP = "";
     let activeClassS = "";
     const fileName = location.pathname.split('/').pop();
-    
+    console.log("file:", fileName);
     if(fileName === "projects.html")
         activeClassP = "active"
     
     else if(fileName === "skills.html")
         activeClassS = "active"
-    else  activeClassH = "active"
+    else  
+        activeClassH = "active"
     
     myNav.innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-dark">
