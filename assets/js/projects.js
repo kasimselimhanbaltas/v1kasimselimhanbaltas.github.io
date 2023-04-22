@@ -1,11 +1,11 @@
-import {getComponents} from './components.js'
+import { getComponents } from './components.js'
 
 const projects = [
   {
     projectId: 1,
     projectName: "Baltaş Auto Gallery",
 
-    description: "Back end: Spring Boot Database: PostgreSQL Front end: VueJSdsasf Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat natus aliquam asperiores obcaecati maxime reprehenderit itaque distinctio alias explicabo exercitationem. Enim cumque quae delectus! Eveniet rerum beatae quod adipisci reprehenderit, obcaecati officiis voluptatum vel quae eum est nihil necessitatibus quidem, quisquam harum consectetur distinctio. Ab voluptate ex non vitae omnis fuga facilis a cupiditate, dicta, excepturi assumenda, dolor quisquam odit numquam eveniet deleniti. Ducimus, ex facere. Quae voluptates quod cupiditate quas quisquam sequi asperiores ullam non necessitatibus sapiente, laborum fuga hic distinctio blanditiis doloremque, accusantium provident eveniet nam temporibus error ducimus facere tenetur nostrum. Dolorum excepturi aut sequi sunt voluptatum. ",
+    description: "This is my favorite project that I have completed and periodically made improvements on. While researching data for the backend of this project, I signed up for a website and obtained a CSV file with approximately 70,000 car records. Using Python, I created a table from this CSV file. The data in this table was very complex, so I used normalization techniques to create 7 tables from 1 and removed some unnecessary columns. With the Selenium module in Python, I saved approximately 10 images for each car from Google Images, totaling more than 65,000 images into my Postgres database. Initially, I used Python's pyautogui module for this image-saving process, but Selenium's ability to run in the background saved me a lot of time.",
     images: [
       "assets/images/projects/c11.PNG",
       "assets/images/projects/c12.PNG",
@@ -18,7 +18,7 @@ const projects = [
   {
     projectId: 2,
     projectName: "Car Gallery Management System",
-    description: "Back end: Spring Boot Database: PostgreSQL Front end: VueJSdsasf Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat natus aliquam asperiores obcaecati maxime reprehenderit itaque distinctio alias explicabo exercitationem. Enim cumque quae delectus! Eveniet rerum beatae quod adipisci reprehenderit, obcaecati officiis voluptatum vel quae eum est nihil necessitatibus quidem, quisquam harum consectetur distinctio. Ab voluptate ex non vitae omnis fuga facilis a cupiditate, dicta, excepturi assumenda, dolor quisquam odit numquam eveniet deleniti. Ducimus, ex facere. Quae voluptates quod cupiditate quas quisquam sequi asperiores ullam non necessitatibus sapiente, laborum fuga hic distinctio blanditiis doloremque, accusantium provident eveniet nam temporibus error ducimus facere tenetur nostrum. Dolorum excepturi aut sequi sunt voluptatum. ",
+    description: "This project is an enhanced version of the previous project, with an improved database. Additionally, I designed a system for a car dealership and its dealers. I added many functions, such as adding and removing dealers, buying and selling cars, saving customers datas, hiring or firing employees, and more. To save a car, I created a registration screen using the car data I prepared in my previous project. When selecting a car model to register, default values are automatically filled in, and the fields that need to be changed (such as repair history or mileage for a second hand car) can be edited, speeding up the process.",
     images: [
       "assets/images/projects/cc1.PNG",
       "assets/images/projects/cc2.PNG",
@@ -32,7 +32,7 @@ const projects = [
   {
     projectId: 3,
     projectName: "Earth Info",
-    description: "Back end: Spring Boot Database: PostgreSQL Front end: VueJSdsasf Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat natus aliquam asperiores obcaecati maxime reprehenderit itaque distinctio alias explicabo exercitationem. Enim cumque quae delectus! Eveniet rerum beatae quod adipisci reprehenderit, obcaecati officiis voluptatum vel quae eum est nihil necessitatibus quidem, quisquam harum consectetur distinctio. Ab voluptate ex non vitae omnis fuga facilis a cupiditate, dicta, excepturi assumenda, dolor quisquam odit numquam eveniet deleniti. Ducimus, ex facere. Quae voluptates quod cupiditate quas quisquam sequi asperiores ullam non necessitatibus sapiente, laborum fuga hic distinctio blanditiis doloremque, accusantium provident eveniet nam temporibus error ducimus facere tenetur nostrum. Dolorum excepturi aut sequi sunt voluptatum. ",
+    description: "This is the first web project I finished. During my first internship, I learned a lot. I developed a full-stack web application and then fully dockerized the project. Initially, I created a database dump file and restored my local database inside the Postgres container. After that, I created a Postgres image. I also generated a JAR file with Maven wrapper for my backend and then used it to create a Java image. Finally, I built my Vue.js project using npm and created a Node.js image. I published all of these images on Docker Hub. Lastly, I created a docker-compose file to run all the images as containers that are connected to each other via appropriate ports.",
     images: [
       "assets/images/projects/ei1.PNG",
       "assets/images/projects/ei2.PNG",
@@ -42,7 +42,7 @@ const projects = [
   {
     projectId: 4,
     projectName: "Visual Exploration Assistant",
-    description: "Back end: Spring Boot Database: PostgreSQL Front end: VueJSdsasf Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat natus aliquam asperiores obcaecati maxime reprehenderit itaque distinctio alias explicabo exercitationem. Enim cumque quae delectus! Eveniet rerum beatae quod adipisci reprehenderit, obcaecati officiis voluptatum vel quae eum est nihil necessitatibus quidem, quisquam harum consectetur distinctio. Ab voluptate ex non vitae omnis fuga facilis a cupiditate, dicta, excepturi assumenda, dolor quisquam odit numquam eveniet deleniti. Ducimus, ex facere. Quae voluptates quod cupiditate quas quisquam sequi asperiores ullam non necessitatibus sapiente, laborum fuga hic distinctio blanditiis doloremque, accusantium provident eveniet nam temporibus error ducimus facere tenetur nostrum. Dolorum excepturi aut sequi sunt voluptatum. ",
+    description: "This project is a mobile application that my two friends and I developed during our Introduction to Artificial Intelligence course in school. Using an artificial intelligence model that covers certain objects in our campus, the app is designed to help visually impaired people by identifying and providing information on the objects they encounter while walking, such as their type, direction, and distance. To prepare the dataset for this project, we took a total of 2139 photos of objects in our school, such as doors, banks, and stairs, and manually labeled them for higher accuracy. We then integrated the labeled photos into our mobile application. To maximize the output of our model, we used the label location and size when an object is detected to provide more detailed guidance to visually impaired users.",
     images: [
       "assets/images/projects/bg1.PNG",
       "assets/images/projects/bg2.PNG",
@@ -53,7 +53,7 @@ const projects = [
   },
 ]
 
-window.onload = function() {
+window.onload = function () {
   getComponents();
 
   let currentProjectIndex = 0; // Şu anki proje dizindeki ilk proje
