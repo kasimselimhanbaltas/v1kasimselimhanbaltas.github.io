@@ -6,14 +6,12 @@ export function getComponents() {
     let activeClassS = "";
     const fileName = location.pathname.split('/').pop();
     
-    if(fileName === "index.html")
-        activeClassH = "active"
-    
-    else if(fileName === "projects.html")
+    if(fileName === "projects.html")
         activeClassP = "active"
     
     else if(fileName === "skills.html")
         activeClassS = "active"
+    else  activeClassH = "active"
     
     myNav.innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-dark">
