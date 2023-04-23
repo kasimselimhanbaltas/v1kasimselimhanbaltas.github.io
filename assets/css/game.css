@@ -1,5 +1,6 @@
 body{
-    background: linear-gradient(135deg, #add8e6, #ffffff, #ffe4e1);
+    background: linear-gradient(135deg, #ca2a18, #ffffff, #5bc5e9);
+    transition: background 1s;
     height: 95vh;
 }
 .gamespace{
@@ -26,6 +27,13 @@ body{
 .enemy img{
     width: 100%;
 }
+#mjolnir{
+    width: 3vw;
+    transform: translateX(-100%) translateY(50%);
+    visibility: hidden;
+    position: absolute;
+}
+
 
 #boc{
     width: 3vw;
@@ -33,8 +41,8 @@ body{
     visibility: hidden;
     position: absolute;
     transition: all .08s cubic-bezier(.39,0,1,-0.17);
-
 }
+
 #boo{
     width: 3vw;
     transform: translateX(-70%) translateY(-10%) rotate(90deg);
@@ -78,7 +86,7 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.7;
     transform: translateX(-3.5%) translateY(-8%);
 }
 .progress {
@@ -86,7 +94,7 @@ body{
   background-color: #ddd;
 }
 
-.progress-bar {
+.top-panel .progress-bar {
   height: 100%;
   background-color: purple;
   width: 100%;
@@ -94,7 +102,7 @@ body{
 }
 #damage{
     text-align: center;
-    color: red;
+    color: green;
     font-weight: bold;
 }
 #damage p{
@@ -125,4 +133,20 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+}
+#character-info{
+    position: absolute;
+    padding: 5px;
+    bottom: 5%;
+    left: 5%;
+    display: inline-block;
+}
+#character-info .progress-bar{
+    background-color: rgb(72, 176, 72);
+}
+#kratosRageBar{
+    margin: 50px;
+}
+#kratosRageBar .progress-bar{
+    background-color: red;
 }

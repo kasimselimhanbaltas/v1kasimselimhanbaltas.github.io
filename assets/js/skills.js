@@ -18,3 +18,13 @@ for (let i = 0; i < skillsArray.length; i++) {
     const skillHtml = `<div class="skillc"> <div class="skill"> <img src="${skill.image}" alt=""> <h3>${skill.name}</h3> </div> </div>`;
     skillsDiv.insertAdjacentHTML("beforeend", skillHtml);
 }
+
+
+const coin = document.getElementById("cc");
+coin.addEventListener('click', () =>{
+    coin.classList.add("animate");
+    console.log("flippin")
+    setTimeout(() => {
+        coin.classList.remove("animate")
+    }, 3000);
+})
