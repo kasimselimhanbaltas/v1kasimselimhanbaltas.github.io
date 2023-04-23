@@ -26,14 +26,14 @@ startGame = () => {
     const kratosRage = document.getElementById('kratosRage')
 
     let enemyHealth = 20;
-    let kratosHealth = 10;
+    let kratosHealth = 20;
     let direction = 'right';
     myAudio.volume = "0.05";
     myAudio2.volume = "0.05";
     myAudio3.volume = "0.05";
     myAudio4.volume = "0.1";
     let kratosRageVar = 0;
-    kratosHP.textContent = kratosHealth + " / 10"
+    kratosHP.textContent = kratosHealth + " / 20"
     score.textContent = enemyHealth + " / 20" 
     kratosRage.textContent = kratosRageVar + " / 10" 
 
@@ -62,11 +62,11 @@ startGame = () => {
         }
     }
 
-    setInterval(() => {
-        const characterPos = character.getBoundingClientRect();
-        const mjPos = thor.getBoundingClientRect();
-        coordinats.textContent = `Kratos(${parseInt(characterPos.x)}, ${parseInt(characterPos.y)}) || Thor(${parseInt(mjPos.x)}, ${parseInt(mjPos.y)})`
-    }, 200);
+    // setInterval(() => {
+    //     const characterPos = character.getBoundingClientRect();
+    //     const mjPos = thor.getBoundingClientRect();
+    //     coordinats.textContent = `Kratos(${parseInt(characterPos.x)}, ${parseInt(characterPos.y)}) || Thor(${parseInt(mjPos.x)}, ${parseInt(mjPos.y)})`
+    // }, 200);
 
     setTimeout(() => {
         myAudio.src = "game/iwillmakeyousuffer.mp3"
@@ -120,7 +120,7 @@ startGame = () => {
                     endgameL();
                 }
                 console.log("HITTTT")
-                kratosHP.textContent = `${kratosHealth} / 10`
+                kratosHP.textContent = `${kratosHealth} / 20`
                 kratosRage.textContent = kratosRageVar + " / 10" 
                 const newTag = document.createElement("p");
                 newTag.style.color = "red"
@@ -242,7 +242,7 @@ startGame = () => {
     const intervalId = setInterval(() => {
         // const ThorHP = 100 - ((20 - enemyHealth) * 5);
         const ThorHP = enemyHealth * 5;
-        const KratosHPp = kratosHealth * 10;
+        const KratosHPp = kratosHealth * 5;
         const KratosRagepercent = kratosRageVar * 10;
         progressBar.style.width = `${ThorHP}%`;
         kratosHPprogressBar.style.width = `${KratosHPp}%`;
@@ -324,7 +324,7 @@ startGame = () => {
     const endgameL = async() => {
         mjLock = 1;
         kratosHealth = 0;
-        kratosHP.textContent = kratosHealth + " / 10" 
+        kratosHP.textContent = kratosHealth + " / 20" 
         //end game message
         const newTag = document.createElement("p");
         newTag.style.color = "red";
@@ -364,7 +364,7 @@ startGame = () => {
         character.style.transition = "all 0s";
         charge = 0;
         enemyHealth = 20;
-        kratosHealth = 10;
+        kratosHealth = 20;
         kratosRageVar = 0;
         lock = 0;
         thor.style.display = "inline";
@@ -374,7 +374,7 @@ startGame = () => {
         boo.style.width = "3vw"
         score.textContent = enemyHealth + " / 20" 
         kratosRage.textContent = kratosRageVar + " / 10" 
-        kratosHP.textContent = kratosHealth + " / 10" 
+        kratosHP.textContent = kratosHealth + " / 20" 
         playAgainBtn.style.display = "none";
         seconds = 0;
         minutes = 0;
@@ -391,7 +391,7 @@ startGame = () => {
         if(mjLock !== 1){
             mjolnirAttack();
         }
-    }, 2500);
+    }, 1500);
     let lock = 0;
     let mjLock = 0;
     const moveThor = async() => {
