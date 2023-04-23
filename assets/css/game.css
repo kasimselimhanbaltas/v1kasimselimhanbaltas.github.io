@@ -125,6 +125,19 @@ img{
 #playAgain img{
     width: 5vw;
 }
+#startGameBtn{
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    background-color: transparent;
+    border: none;
+    opacity: 1;
+    z-index: 99;
+}
+#startGameBtn img{
+    width: 5vw;
+}
 #muteButton{
     top: 0;
     right: 0;

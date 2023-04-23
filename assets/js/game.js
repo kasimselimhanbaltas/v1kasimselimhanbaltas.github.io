@@ -37,6 +37,13 @@ startGame = () => {
     score.textContent = enemyHealth + " / 20" 
     kratosRage.textContent = kratosRageVar + " / 10" 
 
+    let start = 0;
+    const startGameBtn = document.getElementById('startGameBtn');
+    startGameBtn.addEventListener('click', () => {
+        start = 1;
+        startTimer();
+        startGameBtn.style.display = "none";
+    });
 
 
     
@@ -270,7 +277,7 @@ startGame = () => {
         timer.innerText = `${m}:${s}`;
     }, 1000);
     }
-    startTimer()
+
     function stopTimer() {
         clearInterval(interval);
     }
@@ -389,7 +396,7 @@ startGame = () => {
         mjLock = 0;
     }
     setInterval(() => {
-        if(mjLock !== 1){
+        if(mjLock !== 1 && start ===1){
             mjolnirAttack();
         }
     }, 1500);
@@ -433,7 +440,7 @@ startGame = () => {
         // const distance = Math.sqrt(
         //     (characterRect.x - thorRect.x) ** 2 + (characterRect.y - thorRect.y) ** 2
         // );
-        if(lock === 0) {
+        if(lock === 0 && start ===1) {
             const characterRect = character.getBoundingClientRect();
             const thorRect = thor.getBoundingClientRect();
             const axeRect = axe.getBoundingClientRect();
@@ -489,7 +496,7 @@ startGame = () => {
         // const distance = Math.sqrt(
         //     (characterRect.x - thorRect.x) ** 2 + (characterRect.y - thorRect.y) ** 2
         // );
-        if(lock === 0){
+        if(lock === 0 && start ===1){
             const characterRect = character.getBoundingClientRect();
             const thorRect = thor.getBoundingClientRect();
             const distance = Math.abs(characterRect.x - thorRect.x);
@@ -543,7 +550,7 @@ startGame = () => {
         // const distance = Math.sqrt(
         //     (characterRect.x - thorRect.x) ** 2 + (characterRect.y - thorRect.y) ** 2
         // );
-        if(lock === 0){
+        if(lock === 0 && start ===1){
             const characterRect = character.getBoundingClientRect();
             const thorRect = thor.getBoundingClientRect();
             const heightDiff = Math.abs(characterRect.y - thorRect.y);
