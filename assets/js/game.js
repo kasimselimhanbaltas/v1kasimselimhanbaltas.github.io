@@ -320,6 +320,7 @@ startGame = () => {
         axe.style.width = "4vw"
         boc.style.width = "6vw"
         boo.style.width = "6vw"
+        mjLock = 1;
     }
     const endgameL = async() => {
         mjLock = 1;
