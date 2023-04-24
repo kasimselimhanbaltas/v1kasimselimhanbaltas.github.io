@@ -40,6 +40,8 @@ startGame = () => {
     let start = 0;
     const startGameBtn = document.getElementById('startGameBtn');
     startGameBtn.addEventListener('click', () => {
+        myAudio.src = "game/iwillmakeyousuffer.mp3"
+        myAudio.play();
         start = 1;
         startTimer();
         startGameBtn.style.display = "none";
@@ -74,11 +76,6 @@ startGame = () => {
     //     const mjPos = thor.getBoundingClientRect();
     //     coordinats.textContent = `Kratos(${parseInt(characterPos.x)}, ${parseInt(characterPos.y)}) || Thor(${parseInt(mjPos.x)}, ${parseInt(mjPos.y)})`
     // }, 200);
-
-    setTimeout(() => {
-        myAudio.src = "game/iwillmakeyousuffer.mp3"
-        myAudio.play();
-    }, 1000);
 
     // Theme music delay
     themeMusic.volume = 0.05;
