@@ -17,6 +17,7 @@ startGame = () => {
     const muteButton = document.getElementById('muteButton');
     const unMuteButton = document.getElementById('unMuteButton');
     const goBack = document.getElementById('goBack');
+    const goBack2 = document.getElementById('goBack2');
     const mybody = document.getElementById('mybody');
     const damageDiv = document.getElementById('damage');
     const mybg = document.getElementById('mybg');
@@ -172,6 +173,9 @@ startGame = () => {
 
 
     goBack.addEventListener('click', () => {
+        window.history.back();
+    })    
+    goBack2.addEventListener('click', () => {
         window.history.back();
     })
 

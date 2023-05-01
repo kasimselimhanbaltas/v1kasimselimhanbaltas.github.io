@@ -65,10 +65,10 @@
 
 .no-touch .cs-style-6 figure:hover img,
 .cs-style-6 figure.cs-hover img {
-	-webkit-transform: translateY(-50px) scale(0.7);
+	-webkit-transform: translateY(-500px) scale(0.7);
 	-moz-transform: translateY(-50px) scale(0.7);
 	-ms-transform: translateY(-50px) scale(0.7);
-	transform: translateY(-50px) scale(0.7);
+	transform: translateY(-45px) scale(0.7);
 }
 
 .cs-style-6 figcaption {
