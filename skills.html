@@ -69,14 +69,24 @@
         font-size: 15px;
         transform: translateX(-5%);
     }
+    .fade-in {
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    }
+
+    @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
 </style>
 
 <body>
     <header>
-        <nav id="myNav"></nav>
+        <nav id="myNav" class="fade-in"></nav>
     </header>
 
-    <section class="about text-light text-center" id="about" style="min-height: 85vh;">
+    <section class="about text-light text-center fade-in" id="about" style="min-height: 85vh;">
         <h2>What do I do?</h2>
         <div class="row m-0" style="padding: 8vh 0 0 0; margin-right: 0px;">
             <div class="col-xl-5 ps-5 col-md-12 ">
