@@ -41,8 +41,6 @@
     }
 
     .skill {
-        border: 10px groove silver;
-        border-radius: 10%;
         width: 100px;
         height: 110px;
         position: relative;
@@ -55,30 +53,37 @@
         transform: rotate(360deg);
     }
 
-    .skill img {
-        max-height: 80px;
+    .skillImage {
+        max-height: 75px;
         padding: 10px;
         padding-bottom: 30px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-40%);
     }
 
-    .skill h3 {
+    .myBadge {
         position: absolute;
         width: 100%;
-        bottom: 0;
-        margin: 0;
-        font-size: 15px;
-        transform: translateX(-5%);
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
     }
+
     .fade-in {
-    animation: fadeIn 1s;
-    -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+        -webkit-animation: fadeIn 1s;
     }
 
     @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-    }
+        0% {
+            opacity: 0;
+        }
 
+        100% {
+            opacity: 1;
+        }
+    }
 </style>
 
 <body>
@@ -91,10 +96,11 @@
         <div class="row m-0" style="padding: 8vh 0 0 0; margin-right: 0px;">
             <div class="col-xl-5 ps-5 col-md-12 ">
                 <h2>Profession</h2>
-                <p class="pt-3">I am developing Front-End or Full-Stack web applications. I am familiar with VueJS and NuxtJS.
+                <p class="pt-3">I am developing Front-End or Full-Stack web applications. I am familiar with VueJS and
+                    NuxtJS.
                     I am improving myself in Web Development. I started my web development journey with Spring Boot and
-                    VueJS during my first internship. 
-                    
+                    VueJS during my first internship.
+
                     Currently, I am trying to get better in NuxtJS.
 
                 </p>
@@ -122,5 +128,4 @@
     .hero {
         height: auto;
     }
-
 </style>
